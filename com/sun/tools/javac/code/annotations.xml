@@ -1,0 +1,5 @@
+<root>
+    <item name='com.sun.tools.javac.code.TypeTag'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
