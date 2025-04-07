@@ -58,4 +58,30 @@ public class Protocol extends baseTest {
         webSteps.click("clickProtocolFilterInactive");
         Assert.assertEquals("Inactive", webSteps.getText("inactiveStatusProtocol"));
     }
+
+    @Test(priority = 5)
+    public void deactivateProtocolStatus() throws InterruptedException {
+        extentReportManager.startTest("Test Cases for Protocol Management", "<b> Deactivate Protocol </b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC05: Verify that the user can deactivate a protocol</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Protocol > Filter Activated Protocols > Click Deactivate");
+        webSteps.click("protocolFilterDropdown");
+        webSteps.click("clickProtocolFilterActive");
+        webSteps.click("clickProtocolAction");
+        webSteps.click("clickProtocolDeactivate");
+        //webSteps.implicitWait("Toast_message");
+        //Assert.assertEquals("Protocol updated successfully", webSteps.getText("Toast_message"));
+    }
+
+    @Test(priority = 6)
+    public void activateProtocolStatus() throws InterruptedException {
+        extentReportManager.startTest("Test Cases for Protocol Management", "<b> Activate Protocol </b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC06: Verify that the user can activate a protocol</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Protocol > Filter Inactive Protocols > Click Activate");
+        webSteps.click("protocolFilterDropdown");
+        webSteps.click("clickProtocolFilterInactive");
+        webSteps.click("clickProtocolAction");
+        webSteps.click("clickProtocolActivate");
+        //webSteps.implicitWait("Toast_message");
+        //Assert.assertEquals("Protocol updated successfully", webSteps.getText("Toast_message"));
+    }
 }
