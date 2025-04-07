@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">GCEC-GIT GlobaliTrack >> Fleet Management System</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Apr 7, 2025 05:06:51 PM</span></a>
+<a href="#"><span class="badge badge-primary">Apr 7, 2025 05:31:27 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,7 +66,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,25 +74,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Login with Valid Credentials</p>
+            <p class="name">Geofence Configuration Operations</p>
             <p class="text-sm">
-              <span>5:07:01 PM</span> / <span>00:00:14:194</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>5:32:01 PM</span> / <span>00:01:16:950</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Login with Valid Credentials</h5>
-<span class='badge badge-success'>04.07.2025 5:07:01 PM</span>
-<span class='badge badge-danger'>04.07.2025 5:07:15 PM</span>
-<span class='badge badge-default'>00:00:14:194</span>
+<h5 class="test-status text-fail">Geofence Configuration Operations</h5>
+<span class='badge badge-success'>04.07.2025 5:32:01 PM</span>
+<span class='badge badge-danger'>04.07.2025 5:33:18 PM</span>
+<span class='badge badge-default'>00:01:16:950</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -104,13 +104,86 @@
         <div class="card-header">
           <div class="card-toolbar node-info">
             <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li><span class='badge badge-default'>30:49:781</span></li>
+              <li><span><i class="fa fa-paperclip"></i></span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="2"><span><b> Create Geofence – Polygon Shape </b></span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:32:01 PM</td>
+        <td>
+          <b><font color='blue'>Test Case : </font>TC01: Verify that the user can successfully create a geofence using a polygon shape</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:32:01 PM</td>
+        <td>
+          <b><font color='blue'>Test Steps : </font></b>Logged to System > Click Tool > Click Geofencing > Add Geofence
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:32:31 PM</td>
+        <td>
+          ❌ <b><font color='red'> FAILED : </font></b>no such element: Unable to locate element: {"method":"xpath","selector":"//p[@class='mt-1 text-sm false text-[#03781D] false']"}
+  (Session info: chrome=135.0.7049.42)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.30.0', revision: '509c7f17cc*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [143e42f5a36549028dcae571bb6e5399, findElement {using=xpath, value=//p[@class='mt-1 text-sm false text-[#03781D] false']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.42 (0f351bbd2617..., userDataDir: C:\Users\Samindya\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50692}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50692/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 143e42f5a36549028dcae571bb6e5399
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:32:31 PM</td>
+        <td>
+          🐞 <b><font color='grey'>Bug Screenshot</font></b>
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='./screenshots/CreateGeofence.png' src="./screenshots/CreateGeofence.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:32:51 PM</td>
+        <td>
+          Logged into the system
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
               <li><span class="badge pass-bg log ">Pass</span></li>
-              <li><span class='badge badge-default'>30:14:192</span></li>
+              <li><span class='badge badge-default'>30:20:619</span></li>
               <li></li>
             </ul>
           </div>
           <div class="card-title">
-            <a class="node " id="2"><span><b>Login with Valid Credentials</b></span></a>
+            <a class="node " id="3"><span><b> Create Geofence – Circle Shape </b></span></a>
             <div class="node-attr">
             </div>
           </div>
@@ -123,14 +196,21 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>5:07:13 PM</td>
+        <td>5:32:57 PM</td>
         <td>
-          <b><font color='blue'>Test Steps : </font>Open URL > Enter valid credentials > Click login</b>
+          <b><font color='blue'>Test Case : </font>TC01: Verify that the user can create a geofence using a circular shape</b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:32:57 PM</td>
+        <td>
+          <b><font color='blue'>Test Steps : </font></b>Logged to System > Click Tool > Click Geofencing > Add Geofence
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>5:07:15 PM</td>
+        <td>5:33:18 PM</td>
         <td>
           ✅ <b><font color='green'> PASSED </font></b>
         </td>
@@ -158,25 +238,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Apr 7, 2025 05:06:51 PM</h3>
+<h3>Apr 7, 2025 05:31:27 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Apr 7, 2025 05:07:15 PM</h3>
+<h3>Apr 7, 2025 05:33:19 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -192,12 +272,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -215,9 +295,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> steps passed</small></div>
+<div><small data-tooltip='50%'><b>1</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
+<small data-tooltip='50%'><b>1</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -235,10 +315,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='50%'><b>1</b> events passed</small></div>
+<div><small data-tooltip='12%'><b>1</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>1</b> others
+<small data-tooltip='25%'><b>2</b> events failed,
+<b data-tooltip='%'>5</b> others
 </small>
 </div>
 </div>
@@ -254,7 +334,7 @@
 </div></div>
 <script>
 var timeline = {
-"Login with Valid Credentials":14.194
+"Geofence Configuration Operations":76.95
 };
 </script>
 <div class="row">
@@ -266,7 +346,7 @@ var timeline = {
 <tbody>
 <tr>
 <td>Execution Start Time</td>
-<td>2025-04-07 17:06:51</td>
+<td>2025-04-07 17:31:27</td>
 </tr>
 <tr>
 <td>Tester</td>
@@ -286,11 +366,11 @@ var timeline = {
 </tr>
 <tr>
 <td>Execution End Time</td>
-<td>2025-04-07 17:07:15</td>
+<td>2025-04-07 17:33:19</td>
 </tr>
 <tr>
 <td>Total Execution Time</td>
-<td>00 min, 24 sec</td>
+<td>01 min, 51 sec</td>
 </tr>
 </tbody>
 </table></div>
@@ -301,13 +381,13 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
 passChild: 1,
-failChild: 0,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
@@ -319,10 +399,10 @@ skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 passEvents: 1,
-failEvents: 0,
+failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 1
+infoEvents: 5
 };
 </script>        </div>
       </div>

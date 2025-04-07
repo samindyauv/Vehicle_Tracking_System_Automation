@@ -24,8 +24,6 @@ public class ClickObject extends baseTest {
 
     @Test
     public void loginWithValidCredentials() throws InterruptedException {
-        extentReportManager.testSteps("Verifying Map Controls...");
-
         webSteps.zoomInMap();
         webSteps.dragTheMap(300, 200);
         driver.findElement(By.xpath("//div[contains(@style, 'touch-action: pan-x pan-y')]//child::img")).click();

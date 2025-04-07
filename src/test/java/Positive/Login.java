@@ -18,7 +18,7 @@ public class Login extends baseTest {
 
         webSteps.login();
         extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC01: Verify user can log in with valid credentials</b>");
-        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font>Open URL > Enter valid credentials > Click login</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Open URL > Enter valid credentials > Click login");
         webSteps.waiting();
     }
 
