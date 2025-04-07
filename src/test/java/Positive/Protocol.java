@@ -36,4 +36,26 @@ public class Protocol extends baseTest {
         webSteps.click("addProtocolButton");
         Assert.assertEquals("Protocol added successfully",webSteps.getText("ToastMessage"), "Passed");
     }
+
+    //Edit Protocol
+
+    @Test(priority = 3)
+    public void filterProtocolByActiveStatus() throws InterruptedException {
+        extentReportManager.startTest("Test Cases for Protocol Management", "<b> Filter Active Protocol </b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC03: Verify that the user can filter active protocols</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Protocol > Click Filter > Select Active");
+        webSteps.click("protocolFilterDropdown");
+        webSteps.click("clickProtocolFilterActive");
+        Assert.assertEquals("Active", webSteps.getText("activeStatusProtocol"));
+    }
+
+    @Test(priority = 4)
+    public void filterProtocolsByInactiveStatus() throws InterruptedException {
+        extentReportManager.startTest("Test Cases for Protocol Management", "<b> Filter Inactive Protocol </b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC04: Verify that the user can filter inactive protocols</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Protocol > Click Filter > Select Inactive");
+        webSteps.click("protocolFilterDropdown");
+        webSteps.click("clickProtocolFilterInactive");
+        Assert.assertEquals("Inactive", webSteps.getText("inactiveStatusProtocol"));
+    }
 }

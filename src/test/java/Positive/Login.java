@@ -11,19 +11,18 @@ import java.io.IOException;
 public class Login extends baseTest {
     @BeforeMethod
     public void setUp() throws InterruptedException, IOException {
-        extentReportManager.startTest("Positive Test Case for User Login with Valid Credentials", "<b>Login with valid credentials</b>");
+
         loadUrl();
         extentReportManager.testSteps("<b><font color='blue'>Opened the application URL</font></b>");
+        extentReportManager.startTest("Login with Valid Credentials", "<b>Login with Valid Credentials</b>");
 
         webSteps.login();
-        extentReportManager.testSteps("Entered valid credentials and clicked login");
+        extentReportManager.testSteps("Open URL > Enter valid credentials > Click login");
         webSteps.waiting();
     }
 
     @Test
     public void loginWithValidCredentials() throws InterruptedException {
-        extentReportManager.testSteps("Verifying login success...");
-
         boolean urlVerification = driver.getCurrentUrl().contains("live-tracking");
         Assert.assertTrue(urlVerification, "Expecting login success but not navigated to dashboard");
 
