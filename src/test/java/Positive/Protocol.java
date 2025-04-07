@@ -84,4 +84,14 @@ public class Protocol extends baseTest {
         //webSteps.implicitWait("Toast_message");
         //Assert.assertEquals("Protocol updated successfully", webSteps.getText("Toast_message"));
     }
+
+    @Test(priority = 6)
+    public void searchprotocol() throws InterruptedException {
+        extentReportManager.startTest("Test Cases for Protocol Management", "<b> Search Protocol </b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC07: Verify that the user can search for a protocol</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Protocol > Type in Search");
+        webSteps.type("Protocol_1","searchProtocolField");
+        webSteps.waiting();
+        Assert.assertEquals("Protocol_1", webSteps.getText("protocolSearchResult"), "Passed");
+    }
 }
