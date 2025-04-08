@@ -35,4 +35,13 @@ public class POI extends baseTest{
         webSteps.click("POI_saveBtn");
         Assert.assertEquals("Poi created successfully!", webSteps.getText("Toast_message"), "Passed");
     }
+
+    @Test(priority = 2)
+    public void searchPOI() throws InterruptedException {
+        extentReportManager.startTest("POI (Point of Interest) Management", "<b>Search POI</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC02: Verify that the user can search a POI using a valid name</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Tool > Click POI > Search POI");
+        webSteps.type("Bus Stop", "SearchBar");
+        Assert.assertEquals("Bus Stop", webSteps.getText("first_item_label"), "Passed");
+    }
 }
