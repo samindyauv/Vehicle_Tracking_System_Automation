@@ -44,4 +44,16 @@ public class POI extends baseTest{
         webSteps.type("Bus Stop", "SearchBar");
         Assert.assertEquals("Bus Stop", webSteps.getText("first_item_label"), "Passed");
     }
+
+    @Test(priority = 3)
+    public void deletePOI() throws InterruptedException {
+        extentReportManager.startTest("POI (Point of Interest) Management", "<b>Delete POI</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC03: Verify that the user can delete an existing POI</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Tool > Click POI > Click Action > Delete POI");
+        webSteps.click("POI_sb_action_btn");
+        webSteps.click("POI_sb_delete_btn");
+        webSteps.scrollToElement("confirmation_delete_btn");
+        webSteps.click("confirmation_delete_btn");
+        Assert.assertEquals("Poi item has been deleted successfully!", webSteps.getText("Toast_message"), "Passed");
+    }
 }
