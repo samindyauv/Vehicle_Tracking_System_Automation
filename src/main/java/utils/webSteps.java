@@ -264,7 +264,7 @@ public class webSteps {
             robot.keyPress(KeyEvent.VK_V);
             robot.keyRelease(KeyEvent.VK_V);
             robot.keyRelease(KeyEvent.VK_CONTROL);
-            Thread.sleep(10000000);
+            Thread.sleep(100);
 
             waiting();
 
