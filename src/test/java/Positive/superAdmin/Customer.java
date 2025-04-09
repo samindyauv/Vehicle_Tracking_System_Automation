@@ -77,7 +77,7 @@ public class Customer extends baseTest{
     @Test(priority = 5)
     public void deactivateCustomerStatus() throws InterruptedException {
         extentReportManager.startTest("Test Cases for Customer Management", "<b> Deactivate Customer </b>");
-        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC03: Verify that the user can deactivate a customer</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC05: Verify that the user can deactivate a customer</b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Customer > Filter Activated Customers > Click Deactivate");
         webSteps.click("customerFilterDropdown");
         webSteps.click("clickCustomerFilterActive");
@@ -90,7 +90,7 @@ public class Customer extends baseTest{
     @Test(priority = 6)
     public void activateCustomerStatus() throws InterruptedException {
         extentReportManager.startTest("Test Cases for Customer Management", "<b> Activate Customer </b>");
-        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC04: Verify that the user can activate a customer</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC06: Verify that the user can activate a customer</b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Customer > Filter Inactive Customer > Click Activate");
         webSteps.click("customerFilterDropdown");
         webSteps.click("clickCustomerFilterInactive");
@@ -98,6 +98,16 @@ public class Customer extends baseTest{
         webSteps.click("clickCustomerActivate");
         //webSteps.implicitWait("Toast_message");
         //Assert.assertEquals("Protocol updated successfully", webSteps.getText("Toast_message"));
+    }
+
+    @Test(priority = 7)
+    public void searchCustomer() throws InterruptedException {
+        extentReportManager.startTest("Test Cases for Customer Management", "<b> Search Customer </b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC07: Verify that the user can search a customer</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Customer > Type in Search");
+        webSteps.type("Glen","customerSearchField");
+        webSteps.waiting();
+        Assert.assertEquals("Glen Maxwell", webSteps.getText("customerSearchResult"), "Passed");
     }
 
 

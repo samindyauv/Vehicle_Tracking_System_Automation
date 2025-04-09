@@ -84,7 +84,7 @@ public class Protocol extends baseTest {
     @Test(priority = 6)
     public void searchprotocol() throws InterruptedException {
         extentReportManager.startTest("Test Cases for Protocol Management", "<b> Search Protocol </b>");
-        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC07: Verify that the user can search for a protocol</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC07: Verify that the user can search a protocol</b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Protocol > Type in Search");
         webSteps.type("Protocol_1","searchProtocolField");
         webSteps.waiting();
