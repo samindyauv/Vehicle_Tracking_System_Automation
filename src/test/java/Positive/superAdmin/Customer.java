@@ -54,5 +54,25 @@ public class Customer extends baseTest{
         //Assert.assertEquals("Protocol added successfully",webSteps.getText("ToastMessage"), "Passed");
     }
 
+    @Test(priority = 3)
+    public void filterCustomerByActiveStatus() throws InterruptedException {
+        extentReportManager.startTest("Test Cases for Customer Management", "<b> Filter Active Customer </b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC03: Verify that the user can filter active customer</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Customer > Click Filter > Select Active");
+        webSteps.click("customerFilterDropdown");
+        webSteps.click("clickCustomerFilterActive");
+        Assert.assertEquals("Active", webSteps.getText("activeStatusCustomer"));
+    }
+
+    @Test(priority = 4)
+    public void filterCustomerByInactiveStatus() throws InterruptedException {
+        extentReportManager.startTest("Test Cases for Customer Management", "<b> Filter Inactive Customer </b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Case : </font>TC04: Verify that the user can filter inactive customer</b>");
+        extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Customer > Click Filter > Select Inactive");
+        webSteps.click("customerFilterDropdown");
+        webSteps.click("clickCustomerFilterInactive");
+        Assert.assertEquals("Inactive", webSteps.getText("inactiveStatusCustomer"));
+    }
+
 
 }
