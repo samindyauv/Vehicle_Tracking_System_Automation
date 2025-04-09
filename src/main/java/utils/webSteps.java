@@ -4,8 +4,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.io.File;
 
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.Properties;
@@ -16,8 +18,12 @@ import static dataProviders.repositoryFileReader.findElementRepo;
 
 public class webSteps {
     protected static WebDriver driver;
-    private final String email;
-    private final String password;
+    private final String emailSuperAdmin;
+    private final String passwordSuperAdmin;
+    private final String emailCustomer;
+    private final String passwordCustomer;
+    private final String emailSubCustomer;
+    private final String passwordSubCustomer;
 
 
     public webSteps(WebDriver driver) {
@@ -25,14 +31,35 @@ public class webSteps {
 
         // Load email and password from properties file
         Properties properties = propertyLoader.loadProperties("src/main/resources/dataset.properties");
-        this.email = properties.getProperty("email");
-        this.password = properties.getProperty("password");
+        this.emailSuperAdmin = properties.getProperty("emailSuperAdmin");
+        this.passwordSuperAdmin = properties.getProperty("passwordSuperAdmin");
+        this.emailCustomer = properties.getProperty("emailCustomer");
+        this.passwordCustomer = properties.getProperty("passwordCustomer");
+        this.emailSubCustomer = properties.getProperty("emailSubCustomer");
+        this.passwordSubCustomer = properties.getProperty("passwordSubCustomer");
+
     }
 
-    public void login() throws InterruptedException {
+    public void loginSuperAdmin() throws InterruptedException {
         waiting();
-        type(email, "customerEmailField");
-        type(password, "customerPasswordField");
+        type(emailSuperAdmin, "customerEmailField");
+        type(passwordSuperAdmin, "customerPasswordField");
+        click("customerLoginButton");
+        waiting();
+    }
+
+    public void loginCustomer() throws InterruptedException {
+        waiting();
+        type(emailCustomer, "customerEmailField");
+        type(passwordCustomer, "customerPasswordField");
+        click("customerLoginButton");
+        waiting();
+    }
+
+    public void loginSubCustomer() throws InterruptedException {
+        waiting();
+        type(emailSubCustomer, "customerEmailField");
+        type(passwordSubCustomer, "customerPasswordField");
         click("customerLoginButton");
         waiting();
     }
@@ -208,4 +235,47 @@ public class webSteps {
 
         }
     }
+
+    // Common method to upload a file from resources folder
+    public void uploadFile(String fileName, String locator) throws InterruptedException {
+        click(locator);
+
+        // Construct path to the image inside resources folder
+        String resourcePath = "src/main/resources/assets/" + fileName;
+        File file = new File(resourcePath);
+
+        if (!file.exists()) {
+            throw new RuntimeException("File not found: " + resourcePath);
+        }
+
+        // Get absolute path
+        String absolutePath = file.getAbsolutePath();
+
+        // Copy path to clipboard
+        StringSelection selection = new StringSelection(absolutePath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+
+        try {
+            waiting();
+            Robot robot = new Robot();
+
+            // Simulate Ctrl + V and Enter
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            Thread.sleep(10000000);
+
+            waiting();
+
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+
+            waiting();
+
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
