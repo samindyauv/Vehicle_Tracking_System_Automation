@@ -21,7 +21,7 @@ public class Customer extends baseTest{
     }
 
     @Test(priority = 1)
-    public void createSubAccount() throws InterruptedException, AWTException {
+    public void createCustomer() throws InterruptedException, AWTException {
         extentReportManager.startTest("Test Cases for Customer Management", "<b> Add Customer </b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Case  : </font>TC01: Verify that the user can successfully add a customer</b>");
         extentReportManager.testSteps("<b><font color='blue'>Test Steps : </font></b>Logged to System > Click Admin > Click Customer > Click Add Customer");
@@ -51,7 +51,8 @@ public class Customer extends baseTest{
         Thread.sleep(100);
         webSteps.scrollToElement("scf_AddBtn");
         webSteps.click("scf_AddBtn");
-        //Assert.assertEquals("Protocol added successfully",webSteps.getText("ToastMessage"), "Passed");
+        webSteps.waiting();
+        Assert.assertEquals("Protocol added successfully",webSteps.getText("ToastMessage"), "Passed");
     }
 
     @Test(priority = 3)
